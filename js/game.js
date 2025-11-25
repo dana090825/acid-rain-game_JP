@@ -382,5 +382,4 @@ document.addEventListener("DOMContentLoaded", function () {
     loadSettings();
     loadBestScore();
     updateHearts();
-    startGame();
 });
