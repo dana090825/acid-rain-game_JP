@@ -30,5 +30,5 @@ body {
 
 /* 공통으로 쓰는 helper */
 .hidden {
-    display: none;
+    display: none !important;
 }
