@@ -358,6 +358,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const exitBtn = document.getElementById("exit-btn");
 
+    logEvent("page_enter");
+
     fetch("assets/words.json")
         .then(res => res.json())
         .then(data => {
@@ -410,13 +412,4 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "index.html";
         });
     }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        logEvent("page_enter");
-
-        loadSettings();
-        loadBestScore();
-        updateHearts();
-    });
-
 });
