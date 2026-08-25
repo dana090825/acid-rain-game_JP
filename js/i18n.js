@@ -8,7 +8,6 @@ const I18N = {
         start: "시작하기",
         timeLabel: "게임 시간(초)",
         diffLabel: "난이도",
-        langLabel: "언어",
         diffEasy: "쉬움",
         diffNormal: "보통",
         diffHard: "어려움",
@@ -53,7 +52,6 @@ const I18N = {
         start: "Start",
         timeLabel: "Time (sec)",
         diffLabel: "Difficulty",
-        langLabel: "Language",
         diffEasy: "Easy",
         diffNormal: "Normal",
         diffHard: "Hard",
@@ -130,4 +128,31 @@ function applyI18n(root) {
         const key = el.getAttribute("data-i18n-ph");
         if (I18N[lang][key] != null) el.setAttribute("placeholder", I18N[lang][key]);
     });
+}
+
+// 오른쪽 위 언어 전환 뱃지(#lang-badge)를 초기화한다.
+// 클릭하면 언어를 저장하고 화면 문구를 즉시 갱신한다.
+// onChange: 언어 변경 후 추가로 실행할 콜백(선택).
+function setupLangBadge(onChange) {
+    const badge = document.getElementById("lang-badge");
+    if (!badge) return;
+    const opts = badge.querySelectorAll(".lang-opt");
+
+    function render() {
+        const lang = getLang();
+        opts.forEach(function (btn) {
+            btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+        });
+    }
+
+    opts.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            localStorage.setItem("acidRainLang", btn.getAttribute("data-lang"));
+            applyI18n();
+            render();
+            if (typeof onChange === "function") onChange();
+        });
+    });
+
+    render();
 }

@@ -1,18 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const timeInput = document.getElementById("game-time-input");
     const diffSelect = document.getElementById("difficulty-select");
-    const langSelect = document.getElementById("language-select");
     const startBtn = document.getElementById("start-btn");
 
-    // 저장된 언어를 반영하고 화면 문구를 적용
-    langSelect.value = getLang();
+    // 화면 문구 적용 + 오른쪽 위 언어 전환 뱃지 초기화
     applyI18n();
-
-    // 언어를 바꾸면 즉시 저장하고 화면 문구를 갱신
-    langSelect.addEventListener("change", function () {
-        localStorage.setItem("acidRainLang", langSelect.value);
-        applyI18n();
-    });
+    setupLangBadge();
 
     startBtn.addEventListener("click", function () {
         const time = parseInt(timeInput.value, 10);
@@ -20,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         localStorage.setItem("acidRainGameTime", time);
         localStorage.setItem("acidRainDifficulty", diff);
-        localStorage.setItem("acidRainLang", langSelect.value);
 
         window.location.href = "game.html";
     });
