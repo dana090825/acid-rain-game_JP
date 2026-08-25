@@ -1,0 +1,6 @@
+# OMC 작업 폴더
+.omc/
+
+# OS
+.DS_Store
+Thumbs.db
