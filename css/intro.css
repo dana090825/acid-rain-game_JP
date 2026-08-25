@@ -76,26 +76,6 @@
     font-size: 14px;
 }
 
-.settings-icon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-
-    font-size: 30px;
-    color: white;
-    opacity: 0.7;
-
-    cursor: pointer;
-    user-select: none;
-
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.settings-icon:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
 .intro-credit-box {
     position: fixed;
     right: 20px;
