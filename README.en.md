@@ -2,7 +2,7 @@
 
 [🇰🇷 한국어](./README.md) | **🇺🇸 English**
 
-A typing game where you score points by typing the **Korean meaning** of **Japanese words** falling from the top of the screen.
+A typing game where you score points by typing the **meaning (Korean or English)** of **Japanese words** falling from the top of the screen.
 Guess the meaning before a word hits the bottom to keep your lives!
 
 > Just a fun little side project — please enjoy it with an open mind :>
@@ -17,6 +17,7 @@ Guess the meaning before a word hits the bottom to keep your lives!
 
 ## ✨ Features
 
+- 🌐 **Language selection (한국어 / English)** — switch both the UI and the answer language on the intro screen (Japanese → Korean/English meaning)
 - ⏱ **Configurable time limit** — set directly in seconds on the intro screen
 - ⚙ **3 difficulty levels** — affect fall speed and how many words appear at once
   | Difficulty | Spawn interval | Speed | Max on screen |
