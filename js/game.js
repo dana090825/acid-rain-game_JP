@@ -181,7 +181,7 @@ function renderWrongTable() {
         const tr = document.createElement("tr");
         const td = document.createElement("td");
         td.colSpan = 3;
-        td.textContent = "오답 없음";
+        td.textContent = t("noWrong");
         tr.appendChild(td);
         wrongTableBody.appendChild(tr);
         return;
@@ -195,7 +195,7 @@ function renderWrongTable() {
         jpTd.textContent = w.jp;
 
         const krTd = document.createElement("td");
-        krTd.textContent = w.kr;
+        krTd.textContent = w.answer;
 
         const userTd = document.createElement("td");
         userTd.textContent = w.user;
@@ -210,12 +210,17 @@ function renderWrongTable() {
 
 function checkAnswer() {
     if (!isRunning) return;
-    const value = answerInput.value.trim();
-    if (value === "") return;
+    const raw = answerInput.value.trim();
+    if (raw === "") return;
+
+    // 선택 언어에 맞는 정답 필드(kr | en)로 대소문자 무시 비교
+    const answerKey = getAnswerKey();
+    const value = raw.toLowerCase();
 
     let foundIndex = -1;
     for (let i = 0; i < activeWords.length; i++) {
-        if (activeWords[i].word.kr === value) {
+        const answer = activeWords[i].word[answerKey];
+        if (answer && answer.trim().toLowerCase() === value) {
             foundIndex = i;
             break;
         }
@@ -241,14 +246,14 @@ function checkAnswer() {
             const target = activeWords[0];
             wrongAnswers.push({
                 jp: target.word.jp,
-                kr: target.word.kr,
-                user: value
+                answer: target.word[answerKey],
+                user: raw
             });
         } else {
             wrongAnswers.push({
                 jp: "-",
-                kr: "-",
-                user: value
+                answer: "-",
+                user: raw
             });
         }
     }
@@ -357,6 +362,8 @@ document.addEventListener("DOMContentLoaded", function () {
     lifeHeartsEl = document.getElementById("life-hearts");
 
     const exitBtn = document.getElementById("exit-btn");
+
+    applyI18n();
 
     logEvent("page_enter");
 

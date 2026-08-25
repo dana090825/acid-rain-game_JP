@@ -17,25 +17,33 @@
         <button class="info-btn" id="infoBtn">i</button>
 
         <div class="intro-content">
-            <h1 class="intro-title">산성비 - 일어판</h1>
+            <h1 class="intro-title" data-i18n="introTitle">산성비 - 일어판</h1>
 
-            <button class="intro-start_btn" id="start-btn">시작하기</button>
+            <button class="intro-start_btn" id="start-btn" data-i18n="start">시작하기</button>
         </div>
 
         <!-- 화면 맨 아래로 이동 -->
         <div class="intro-options-bottom">
             <div class="intro-options">
                 <div class="intro-field">
-                    <label class="kr-text">게임 시간(초)</label>
+                    <label class="kr-text" data-i18n="langLabel">언어</label>
+                    <select id="language-select" class="intro-select kr-text">
+                        <option value="ko">한국어</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+
+                <div class="intro-field">
+                    <label class="kr-text" data-i18n="timeLabel">게임 시간(초)</label>
                     <input id="game-time-input" class="intro-input kr-text" type="number" value="60" />
                 </div>
 
                 <div class="intro-field">
-                    <label class="kr-text">난이도</label>
+                    <label class="kr-text" data-i18n="diffLabel">난이도</label>
                     <select id="difficulty-select" class="intro-select kr-text">
-                        <option value="easy">쉬움</option>
-                        <option value="normal" selected>보통</option>
-                        <option value="hard">어려움</option>
+                        <option value="easy" data-i18n="diffEasy">쉬움</option>
+                        <option value="normal" selected data-i18n="diffNormal">보통</option>
+                        <option value="hard" data-i18n="diffHard">어려움</option>
                     </select>
                 </div>
             </div>
@@ -43,7 +51,7 @@
     </div>
 
     <div class="intro-credit-box">
-        <p class="intro-credit">
+        <p class="intro-credit" data-i18n-html="creditBox">
             제작자 : 이다연<br>
             E-mail : develu0825@gmail.com<br>
             LinkedIn : linkedin.com/in/develu825
@@ -55,31 +63,32 @@
         <div class="info-overlay" id="infoOverlay"></div>
 
         <div class="info-box">
-            <h2>게임 설명</h2>
-            <p>
+            <h2 data-i18n="infoTitle">게임 설명</h2>
+            <p data-i18n-html="infoP1">
                 위에서 떨어지는 일본어 단어의 <strong>한국어 뜻</strong>을 입력해서 점수를 얻는 게임입니다.
             </p>
-            <p>
+            <p data-i18n="infoP2">
                 심심해서 재미로 만든 것이니 넓은 아량으로 즐겨주세요 : >
             </p>
 
             <ul>
-                <li>⏱ 제한 시간: 인트로에서 직접 설정 가능</li>
-                <li>❤️ 목숨: 5개 (단어를 놓치면 1개 감소)</li>
-                <li>❌ 틀린 단어는 결과 화면에서 다시 확인 가능</li>
-                <li>⚙ 난이도: 단어 속도와 동시 등장 개수가 달라짐</li>
+                <li data-i18n="infoLi1">⏱ 제한 시간: 인트로에서 직접 설정 가능</li>
+                <li data-i18n="infoLi2">❤️ 목숨: 5개 (단어를 놓치면 1개 감소)</li>
+                <li data-i18n="infoLi3">❌ 틀린 단어는 결과 화면에서 다시 확인 가능</li>
+                <li data-i18n="infoLi4">⚙ 난이도: 단어 속도와 동시 등장 개수가 달라짐</li>
             </ul>
 
-            <h3>문의</h3>
-            <p>
+            <h3 data-i18n="infoContactTitle">문의</h3>
+            <p data-i18n-html="infoContact">
                 버그 제보 및 개선 제안은 아래 메일로 보내주세요.<br>
                 <strong>Email:</strong> develu0825@gmail.com
             </p>
 
-            <button class="info-close" id="infoClose">닫기</button>
+            <button class="info-close" id="infoClose" data-i18n="infoClose">닫기</button>
         </div>
     </div>
 
+    <script src="./js/i18n.js"></script>
     <script src="./js/intro.js"></script>
 </body>
 
