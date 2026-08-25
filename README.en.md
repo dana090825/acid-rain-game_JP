@@ -82,7 +82,7 @@ Can be deployed directly on any static host such as GitHub Pages.
 ## 👤 Author
 
 - **이다연 (Dayeon Lee)**
-- 📧 Email: dsmdy090825@dsm.hs.kr
-- 📷 Instagram: [@dan.a825](https://instagram.com/dan.a825)
+- 📧 Email: develu0825@gmail.com
+- 💼 LinkedIn: [develu825](https://www.linkedin.com/in/develu825/)
 
 > Please send bug reports and suggestions to the email above.

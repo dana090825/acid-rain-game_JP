@@ -82,7 +82,7 @@ GitHub Pages 등 정적 호스팅으로 바로 배포할 수 있습니다.
 ## 👤 제작자
 
 - **이다연**
-- 📧 Email: dsmdy090825@dsm.hs.kr
-- 📷 Instagram: [@dan.a825](https://instagram.com/dan.a825)
+- 📧 Email: develu0825@gmail.com
+- 💼 LinkedIn: [develu825](https://www.linkedin.com/in/develu825/)
 
 > 버그 제보 및 개선 제안은 위 메일로 보내주세요.
